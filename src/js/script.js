@@ -26,7 +26,7 @@ function getData() {
 
   (async () => {
     const iterator = await api.createIterator(
-      `search/${value}/*&facet=Type(book)`
+      `search/${value}&facet=Type(book)`
     );
     for await (const response of iterator) {
       renderData(response);
