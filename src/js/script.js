@@ -25,9 +25,28 @@ function getData() {
   console.log(value);
 
   (async () => {
-    const iterator = await api.createIterator(`search/${value}`);
+    const iterator = await api.createIterator(
+      `search/${value}/*&facet=Type(book)`
+    );
     for await (const response of iterator) {
-      console.log(response);
+      renderData(response);
     }
   })();
+}
+
+function renderData(response) {
+  console.log(response);
+
+  var app = document.getElementById("result");
+  app.innerHTML = "";
+
+  response.forEach(function(book) {
+    var html = `
+                <div class='card'>
+                <h2>Resultaat:</h2>
+                <p>${book.title.full}</p>
+                <p>${book.author.fullname}</p>
+                </div>`;
+    app.insertAdjacentHTML("beforeend", html);
+  });
 }
