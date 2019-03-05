@@ -7,20 +7,27 @@ const api = new API({
 //Imagine the functions toJson, cleanJSON and
 //renderToDocument exist, and do what their
 //name says.
-(async () => {
-  const iterator = await api.createIterator(
-    "search/classification:prentenboek"
-  );
-  for await (const response of iterator) {
-    console.log(response);
-  }
-})();
+// (async () => {
+//   const iterator = await api.createIterator(
+//     "search/classification:prentenboek"
+//   );
+//   for await (const response of iterator) {
+//     console.log(response);
+//   }
+// })();
 
 const submit = document.querySelector(".button");
 
-submit.addEventListener("click", getValue);
+submit.addEventListener("click", getData);
 
-function getValue() {
+function getData() {
   const value = document.querySelector(".veld").value;
   console.log(value);
+
+  (async () => {
+    const iterator = await api.createIterator(`search/${value}`);
+    for await (const response of iterator) {
+      console.log(response);
+    }
+  })();
 }
