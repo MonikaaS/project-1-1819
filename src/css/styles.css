@@ -1,1 +1,30 @@
+* {
+    font-family: 'Amatic SC', cursive;
+}
 
+h1 {
+    text-align: center;
+}
+
+h2 {
+    margin: 50px;
+}
+
+section {
+    background-color: deepskyblue;
+    margin: 0 10em 0 10em;
+    border-radius: 1em;
+}
+
+div {
+    display: flex;
+    justify-content: center;
+}
+
+input {
+    width: 30vw;
+}
+
+p {
+    margin: 2em;
+}
