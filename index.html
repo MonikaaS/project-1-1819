@@ -564,25 +564,28 @@
             </svg>
         </header>
 
-        <h1></h1>
+        <h1>1. Zoek je boek</h1>
+        <section class="grid">
+            <section class="section">
+                <h2>Wat wil je lezen?</h2>
+                <label>
+                    <input class="veld" type="text" name="name" placeholder="Welk boek wil je lezen?" required>
+                    <button class="button" type="submit">go!</button>
+                </label>
+            </section>
 
-        <label>
-            <input class="veld" type="text" name="name" placeholder="Welk boek wil je lezen?" required>
-            <button class="button" type="submit">go!</button>
-        </label>
-
-        <h2>Ik weet niet precies wat ik wil lezen</h2>
-        <section>
-            <h2>Wat wil je lezen?</h2>
-            <div>
-                <p>spinnen</p>
-                <p>voetbal</p>
-                <p>iets anders</p>
-            </div>
+            <section class="section">
+                <h2>Ik weet niet precies wat ik wil lezen</h2>
+                <div id="quiz"></div>
+            </section>
         </section>
 
-        <section id="result">
+        <h1>2. Kies je boek uit</h1>
+        <section class="grid" id="result">
+        </section>
 
+        <h1>3. Haal je boek op</h1>
+        <section class="hidden">
         </section>
     </main>
 </body>
